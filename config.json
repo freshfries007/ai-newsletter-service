@@ -1,0 +1,18 @@
+{
+  "sitemap_feeds_file": "web_search.txt",
+  "relevance_threshold": 0.3,
+  "fetch_full": true,
+  "output_path": "digest.json",
+  "gpt_api_key": "${GPT_API_KEY}",
+  "openai_model": "gpt-4.1-mini",
+  "email_output": "newsletter.html",
+  "word_count": "1500-2000",
+  "max_entries_per_feed": 300,
+  "ses_sender": "${SES_SENDER}",
+  "ses_recipient": "${SES_RECIPIENT}",
+  "email_subject": "Your Daily Finance Newsletter",
+  "s3_bucket": "finance-bucket-0",
+  "s3_key_prefix": "newsletter",
+  "ses_region": "us-east-2",
+  "subscribers_table": "Subscribers"
+}

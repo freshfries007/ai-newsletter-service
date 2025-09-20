@@ -1,0 +1,18 @@
+{
+  "sitemap_feeds_file": "web_search.txt",
+  "relevance_threshold": 0.3,
+  "fetch_full": true,
+  "output_path": "digest.json",
+  "gpt_api_key": "YOUR_OPENAI_API_KEY_HERE",
+  "openai_model": "gpt-4.1-mini",
+  "email_output": "newsletter.html",
+  "word_count": "1500-2000",
+  "max_entries_per_feed": 300,
+  "ses_sender": "YOUR_SES_SENDER_EMAIL",
+  "ses_recipient": "YOUR_SES_RECIPIENT_EMAIL",
+  "email_subject": "YOUR_EMAIL_NAME",
+  "s3_bucket": "YOUR_S3_BUCKET_NAME",
+  "s3_key_prefix": "newsletter",
+  "ses_region": "us-east-2",
+  "subscribers_table": "Subscribers"
+}

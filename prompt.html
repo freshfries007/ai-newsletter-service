@@ -1,0 +1,189 @@
+<!--
+PROMPT & DESIGN GUIDELINES
+
+You are an expert daily newsletter writer specializing in recent and significant advancements in science and technology. Each morning you receive raw scraped data ({raw_data}) about new discoveries, inventions, and research findings. Your job is to transform them into a polished, accessible, and visually engaging HTML email that feels like a must-read briefing from a trusted researcher or futurist.
+
+TONE & VOICE
+• Informative, curious, and enthusiastic—like a colleague sharing exciting lab results.
+• Clear, concise sentences; minimal jargon. Explain complex ideas simply.
+• Story-driven: Start with “What happened,” then “Why it matters.”
+• Light wonder or awe where appropriate (“This could change how we…”).
+• Consistent voice across editorial and native sponsor copy.
+
+AUDIENCE
+Curious professionals, researchers, engineers, educators, and lifelong learners.
+
+STRUCTURE (EXACT ORDER)
+1. Warm “Good morning” introduction
+2. Native sponsor mention
+3. Science & Tech Highlights (3), each with:
+   – Summary: 3 sentences explaining what was discovered/invented
+   – Context: 3 sentences on background or team behind it
+   – Why this matters: 3 sentences on implications or future impact
+   – Then append: “More information can be found [here]({URL})”
+4. Today’s Deep Dive: One clear explanation of a scientific principle, emerging field, or ethical question related to one of the highlights.
+5. Quick Hits: 5 brief science/tech news items, 1–2 sentences each
+6. Closing section with appreciation and feedback link
+
+LAYOUT & STYLE
+• Single-column, max-width 600px, mobile-first design
+• Font stack: system UI (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif)
+• Body text: 16px, #333333; background #ffffff
+• Accent color: #0D79B8 (for borders, headings, links) — evokes trust and innovation
+• Card style: border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1); padding:24px; margin-bottom:24px
+• Section dividers: <hr> with subtle gray line
+• H1: 28px, #0D79B8; H2: 20px, #0D79B8; H3: 15px, #2C2C2C with light-blue background
+• Use icons (🧪, 💡, 🔭) sparingly for visual rhythm
+• No <span>, extra fonts, colors, or unsupported CSS (e.g., flex/grid)
+
+MONETIZATION
+• One sponsor per issue, introduced after intro
+• Label “Sponsored by {SponsorName}” in italic, followed by 3-sentence advertorial in same tone
+
+FORBIDDEN
+• No mention of AI, automation, scraping, or RSS
+• No markdown, extra classes, or non-standard tags
+• No horizontal rules thicker than 1px
+• No lines "-", signatures, or bot indicators
+
+Placeholders: {Weekday}, {Month}, {Day}, {SponsorName}, {raw_data}, {FeedbackEmail}
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexus Brief</title>
+</head>
+<body style="margin:0;padding:0;background:#f7f9fc;">
+  <div role="main" aria-label="Newsletter body"
+       style="max-width:600px;margin:0 auto;padding:16px;">
+
+    <!-- Main Header -->
+    <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);padding:24px;text-align:center;margin-bottom:24px;">
+      <h1 style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                 font-size:28px;color:#0D79B8;margin:0 0 8px;">
+        Nexus Brief
+      </h1>
+      <p style="font-size:15px;color:#555;margin:0;">
+        <strong>{Weekday}, {Month} {Day}</strong> • Advancing Tomorrow
+      </p>
+    </div>
+
+    <!-- Intro & Sponsor -->
+    <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);padding:24px;margin-bottom:24px;">
+      <h2 style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                 font-size:20px;color:#0D79B8;border-left:4px solid #0D79B8;padding-left:8px;margin:0 0 16px;">
+        🌅 Good morning,
+      </h2>
+      <p style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                font-size:16px;color:#333;margin:0 0 16px;word-break:break-word;">
+        Another day of discovery. Today we explore breakthroughs in AI reasoning, fusion energy progress, and a novel gene-editing tool. Stay curious — and send thoughts to <strong>{FeedbackEmail}</strong>.
+      </p>
+      <p style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+                font-size:16px;color:#333;font-style:italic;margin:0;word-break:break-word;">
+        Sponsored by <strong>{SponsorName}</strong>: Your trusted partner in innovation tools. This week: accelerating research workflows with secure, local-first computing environments.
+      </p>
+    </div>
+
+    <!-- Science & Tech Highlights -->
+    <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);padding:24px;margin-bottom:24px;">
+      <h2 style="font-size:20px;color:#0D79B8;border-left:4px solid #0D79B8;padding-left:8px;margin:0 0 16px;
+                 font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+        🧪 Science &amp; Tech Highlights
+      </h2>
+
+      <!-- Highlight 1 -->
+      <div style="margin-bottom:24px;">
+        <h3 style="background:rgba(13,121,184,0.08);color:#2C2C2C;padding:8px 12px;border-radius:4px;
+                   font-size:15px;font-weight:600;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;">
+          Breakthrough One
+        </h3>
+        <p style="font-size:16px;color:#333;margin:12px 0 0;word-break:break-word;"><strong>Summary:</strong> Scientists at MIT have developed a new AI model that simulates causal reasoning without large training datasets. It learns by interacting with virtual environments, mimicking human-like inference. Early tests show promise in diagnosing rare diseases.</p>
+        <p style="font-size:16px;color:#333;margin:12px 0;word-break:break-word;"><strong>Context:</strong> Traditional AI relies on pattern recognition, not understanding cause and effect. This project builds on cognitive science principles, inspired by infant learning. The team used physics-based simulations to train the system incrementally.</p>
+        <p style="font-size:16px;color:#333;margin:12px 0;word-break:break-word;"><strong>Why this matters:</strong> Systems that understand causality could make safer decisions in medicine, robotics, and climate modeling. This approach may reduce dependency on massive data centers. It opens doors to more efficient, interpretable AI.</p>
+        <p style="font-size:16px;color:#333;margin:12px 0;word-break:break-word;">
+          More information can be found <a href="{url1}" style="color:#0D79B8;text-decoration:none;">here</a>.
+        </p>
+      </div>
+      <hr style="border:none;border-top:1px solid #e0e0e0;margin:24px 0;" />
+
+      <!-- Highlight 2 -->
+      <div style="margin-bottom:24px;">
+        <h3 style="background:rgba(13,121,184,0.08);color:#2C2C2C;padding:8px 12px;border-radius:4px;
+                   font-size:15px;font-weight:600;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;">
+          Breakthrough Two
+        </h3>
+        <p style="font-size:16px;color:#333;margin:12px 0 0;word-break:break-word;"><strong>Summary:</strong> A private fusion startup achieved net energy gain for over two minutes using a compact stellarator design. Unlike previous attempts, this reactor maintained stable plasma without external heating pulses. The result marks a leap toward continuous operation.</p>
+        <p style="font-size:16px;color:#333;margin:12px 0;word-break:break-word;"><strong>Context:</strong> Most fusion projects use tokamaks or laser implosion. This company’s alternative magnetic confinement method reduces complexity and cost. Backed by DOE grants and venture capital, they aim for pilot plants by 2030.</p>
+        <p style="font-size:16px;color:#333;margin:12px 0;word-break:break-word;"><strong>Why this matters:</strong> Sustained reactions are essential for viable fusion power. Compact designs could democratize access beyond national labs. If scalable, this could accelerate clean energy deployment globally.</p>
+        <p style="font-size:16px;color:#333;margin:12px 0;word-break:break-word;">
+          More information can be found <a href="{url2}" style="color:#0D79B8;text-decoration:none;">here</a>.
+        </p>
+      </div>
+      <hr style="border:none;border-top:1px solid #e0e0e0;margin:24px 0;" />
+
+      <!-- Highlight 3 -->
+      <div>
+        <h3 style="background:rgba(13,121,184,0.08);color:#2C2C2C;padding:8px 12px;border-radius:4px;
+                   font-size:15px;font-weight:600;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;margin:0;">
+          Breakthrough Three
+        </h3>
+        <p style="font-size:16px;color:#333;margin:12px 0 0;word-break:break-word;"><strong>Summary:</strong> Researchers unveiled CRISPR-Cas12e, a smaller and more precise gene editor derived from marine bacteria. In trials, it reduced off-target effects by 70% compared to Cas9. Its compact size allows delivery via viral vectors previously too small.</p>
+        <p style="font-size:16px;color:#333;margin:12px 0;word-break:break-word;"><strong>Context:</strong> Gene therapy has been limited by accuracy and delivery challenges. This enzyme evolved naturally in low-energy ocean microbes. The team used metagenomic screening to identify its potential.</p>
+        <p style="font-size:16px;color:#333;margin:12px 0;word-break:break-word;"><strong>Why this matters:</strong> Higher precision means safer treatments for genetic disorders. Smaller editors expand reach to brain and muscle tissues. Clinical trials are expected within two years.</p>
+        <p style="font-size:16px;color:#333;margin:12px 0;word-break:break-word;">
+          More information can be found <a href="{url3}" style="color:#0D79B8;text-decoration:none;">here</a>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Today’s Deep Dive -->
+    <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);padding:24px;margin-bottom:24px;">
+      <h2 style="font-size:20px;color:#0D79B8;border-left:4px solid #0D79B8;padding-left:8px;margin:0 0 16px;
+                 font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+        💡 Today’s Deep Dive
+      </h2>
+      <p style="font-size:16px;color:#333;margin:0 0 16px;word-break:break-word;">Neutrinos are nearly massless particles that pass through matter almost undisturbed. Trillions stream through your body every second, yet they remain among the least understood components of the universe. Detecting them requires massive underground sensors filled with ultra-pure water or liquid argon.</p>
+      <p style="font-size:16px;color:#333;margin:0 0 16px;word-break:break-word;">Recent upgrades at observatories like IceCube and Super-Kamiokande now allow scientists to trace neutrinos back to their cosmic origins—black holes, supernovae, even the early universe. These “ghost particles” could reveal secrets about dark matter and why matter dominates antimatter.</p>
+      <p style="font-size:16px;color:#333;margin:0;word-break:break-word;">As detection improves, neutrino astronomy may become a new window into high-energy astrophysics—complementing gravitational waves and traditional telescopes in our exploration of the cosmos.</p>
+    </div>
+
+    <!-- Quick Hits -->
+    <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);padding:24px;margin-bottom:24px;">
+      <h2 style="font-size:20px;color:#0D79B8;border-left:4px solid #0D79B8;padding-left:8px;margin:0 0 16px;
+                 font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+        📰 Quick Hits
+      </h2>
+      <p style="font-size:16px;color:#333;margin:0 0 16px;word-break:break-word;"><strong>New Exoplanet Found:</strong> Astronomers detected a rocky planet in the habitable zone of a red dwarf 38 light-years away. Atmospheric analysis will begin next year using JWST.</p>
+      <hr style="border:none;border-top:1px solid #e0e0e0;margin:16px 0;"/>
+      <p style="font-size:16px;color:#333;margin:0 0 16px;word-break:break-word;"><strong>Bioengineered Skin:</strong> Lab-grown skin with sweat glands and hair follicles successfully grafted onto mice. Could revolutionize burn treatment and dermatology testing.</p>
+      <hr style="border:none;border-top:1px solid #e0e0e0;margin:16px 0;"/>
+      <p style="font-size:16px;color:#333;margin:0 0 16px;word-break:break-word;"><strong>Quantum Memory Milestone:</strong> Researchers stored quantum states in diamond defects for over five seconds—long enough for networked quantum computing.</p>
+      <hr style="border:none;border-top:1px solid #e0e0e0;margin:16px 0;"/>
+      <p style="font-size:16px;color:#333;margin:0 0 16px;word-break:break-word;"><strong>AI Predicts Protein Shapes:</strong> A new open-source model matches AlphaFold’s accuracy but runs on consumer GPUs, enabling wider access to structural biology tools.</p>
+      <hr style="border:none;border-top:1px solid #e0e0e0;margin:16px 0;"/>
+      <p style="font-size:16px;color:#333;margin:0;word-break:break-word;"><strong>Mars Helicopter Legacy:</strong> NASA confirmed Ingenuity’s final flight. Its success paved the way for aerial scouts on future Mars missions.</p>
+    </div>
+
+    <!-- Conclusion -->
+    <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);padding:24px;margin-bottom:24px;">
+      <h2 style="font-size:20px;color:#0D79B8;border-left:4px solid #0D79B8;padding-left:8px;margin:0 0 16px;
+                 font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+        🙏 Until Tomorrow
+      </h2>
+      <p style="font-size:16px;color:#333;margin:0 0 16px;word-break:break-word;">
+        Thank you for exploring today’s frontiers with us. Curiosity drives progress — feel free to reply with questions or share with a fellow explorer.
+      </p>
+      <p style="font-size:16px;color:#333;margin:0;word-break:break-word;">
+        Subscribe for daily updates or send feedback to <strong>{FeedbackEmail}</strong>.
+      </p>
+      <p style="font-size:13px;color:#888;margin-top:24px;border-top:1px solid #e0e0e0;padding-top:16px;word-break:break-word;">
+        <em>This email is for educational and informational purposes only. Not intended as formal scientific advice.</em>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
