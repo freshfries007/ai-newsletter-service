@@ -10,8 +10,8 @@
   "max_entries_per_feed": 300,
   "ses_sender": "${SES_SENDER}",
   "ses_recipient": "${SES_RECIPIENT}",
-  "email_subject": "Your Daily Finance Newsletter",
-  "s3_bucket": "finance-bucket-0",
+  "email_subject": "EMAIL_NAME",
+  "s3_bucket": "s3_bucket",
   "s3_key_prefix": "newsletter",
   "ses_region": "us-east-2",
   "subscribers_table": "Subscribers"
